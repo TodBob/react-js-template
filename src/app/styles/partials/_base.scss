@@ -1,0 +1,16 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: $default-bg-color;
+  }
+  
+  body {
+    margin: 0;
+    font-family: $main-fonts;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: $second-fonts;
+  }

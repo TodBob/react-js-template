@@ -1,0 +1,5 @@
+1. "Initial commit" take aprox. 2-3h of work
+    - I have created template for this project,
+    - with all configuration for Redux, Saga, Sass, Reselect, Eslint, Bootstrap
+    - and created first test compomnent with fetch
+    - I'm reusing logic from my react-typescript-template: https://github.com/TomasKomprs/react-typescript-template
