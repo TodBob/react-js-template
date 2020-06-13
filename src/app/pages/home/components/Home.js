@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Carousel from '../../../components/carousel/components/Carousel';
+import Navbar from '../../../components/navbar/components/Navbar';
 
 const Home = ({ fetchMoviesData }) => {
   useEffect(() => {
@@ -12,9 +13,9 @@ const Home = ({ fetchMoviesData }) => {
 
   return (
     <>
-      {/* TODO: NAV BAR */}
+      <Navbar />
       <div className="container">
-        <h1 className="mt-5">Film database</h1>
+        <h1 className="mt-5">Movies Database</h1>
         <Carousel title="Popular Movies" dataArray={[1, 2, 3, 4, 5, 6, 7, 8, 9, 4, 5, 46, 54, 4, 1, 1, 1, 1, 1, 1, 1, 1]} />
         <Carousel title="Popular Series" dataArray={[1, 2, 3, 4, 5, 6, 7, 8, 9, 4, 5, 46, 54, 4, 1, 1, 1, 1, 1, 1, 1, 1]} />
         <Carousel title="Family" dataArray={[1, 2, 3, 4, 5, 6, 7, 8, 9, 4, 5, 46, 54, 4, 1, 1, 1, 1, 1, 1, 1, 1]} />
