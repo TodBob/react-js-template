@@ -4,5 +4,9 @@
     - and created first test compomnent with fetch
     - I'm reusing logic from my react-typescript-template: https://github.com/TomasKomprs/react-typescript-template
 
-2. commit, take aprox. 1h+ of work
-3. commit, added navbar. Take aprox. 15min+ of work    
+2. commit, Refactor logic from carousel to Home page, made carousel responsive and finish Home page template 
+    - take aprox. 1h+ of work
+3. commit, added navbar. 
+    - take aprox. 15min of work
+4. coomit, added movie detail page template + added react router
+    - take aprox. 30min of work    

@@ -1,0 +1,8 @@
+.detail-container {
+    ul {
+        padding-left: 15px;
+    }
+  .right-column {
+      @include center;
+  }
+}
