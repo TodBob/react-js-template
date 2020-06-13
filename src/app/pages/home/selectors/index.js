@@ -1,8 +1,8 @@
 import { createSelector } from 'reselect';
 
-export const getCarouselData = createSelector(
-    (state) => state,
-    (state) => state.carouselData,
+export const getMoviesData = createSelector(
+  (state) => state,
+  (state) => state.moviesData,
 );
 
 /*

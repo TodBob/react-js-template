@@ -14,3 +14,7 @@ html, body {
   code {
     font-family: $second-fonts;
   }
+
+  .container {
+    max-width: $container-width;
+  }

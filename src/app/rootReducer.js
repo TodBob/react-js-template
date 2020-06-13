@@ -1,18 +1,18 @@
 import { combineReducers } from 'redux';
 
 /* CAROUSEL */
-import carousel from './components/carousel/reducers/carousel';
-import carouselError from './components/carousel/reducers/error';
-import carouselLoading from './components/carousel/reducers/loading';
+import home from './pages/home/reducers/home';
+import moviesError from './pages/home/reducers/error';
+import moviesLoading from './pages/home/reducers/loading';
 
-const carouselData = combineReducers({
-  carousel,
-  carouselError,
-  carouselLoading,
+const moviesData = combineReducers({
+  home,
+  moviesError,
+  moviesLoading,
 });
 
 const rootReducer = combineReducers({
-  carouselData,
+  moviesData,
 });
 
 export default rootReducer;

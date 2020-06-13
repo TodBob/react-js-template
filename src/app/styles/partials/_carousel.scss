@@ -1,0 +1,16 @@
+.carousel {
+    max-width: 1500px;
+    display: flex;
+    margin: auto;
+
+    .carouselItem {
+        @include center;
+      }
+      
+    .card {
+    
+    }
+
+  }
+
+ 
