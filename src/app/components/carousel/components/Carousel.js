@@ -7,7 +7,7 @@ import {
 } from 'react-bootstrap';
 import { responsive } from '../helpers/carouselResponsive';
 
-const CarouselComponent = ({ dataArray, title }) => (
+const CarouselComponent = ({ moviesArray, title }) => (
   <div className="my-5">
     <h3 className="mb-3">{title}</h3>
     <Carousel
@@ -32,16 +32,16 @@ const CarouselComponent = ({ dataArray, title }) => (
       slidesToSlide={1}
       swipeable
     >
-      {dataArray.map(() => (
-        <Card className="card" style={{ width: '250px' }}>
-          <Card.Img variant="top" src="holder.js/100px180" />
+      {moviesArray.map((movie) => (
+        <Card key={`${movie.id}${movie.release_date}`} className="card" style={{ width: '250px' }}>
+          <Card.Img variant="top" src={`http://image.tmdb.org/t/p/w342${movie.poster_path}`} />
           <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the bulk of
-              the content.
-            </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Card.Title>
+              {movie.original_title
+                ? movie.original_title
+                : movie.original_name}
+            </Card.Title>
+            <Button variant="primary">Details!</Button>
           </Card.Body>
         </Card>
       ))}
@@ -51,7 +51,7 @@ const CarouselComponent = ({ dataArray, title }) => (
 );
 
 CarouselComponent.propTypes = {
-  dataArray: PropTypes.array.isRequired,
+  moviesArray: PropTypes.array.isRequired,
   title: PropTypes.string.isRequired,
 };
 

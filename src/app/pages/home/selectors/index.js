@@ -5,13 +5,7 @@ export const getMoviesData = createSelector(
   (state) => state.moviesData,
 );
 
-/*
-export const getCarouselError = createSelector(
-    getCarouselData,
-    (state) => state.error,
+export const getMovies = createSelector(
+  getMoviesData,
+  (state) => state.movies,
 );
-export const getCarouselLoading = createSelector(
-    getCarouselData,
-    (state) => state.loading,
-);
-*/

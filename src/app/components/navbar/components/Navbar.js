@@ -13,8 +13,8 @@ const NavbarComponent = () => (
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link><Link to="/">Home</Link></Nav.Link>
-          <Nav.Link><Link to="/search">Search</Link></Nav.Link>
+          <Link to="/"><Nav.Link>Home</Nav.Link></Link>
+          <Link to="/search"><Nav.Link>Search</Nav.Link></Link>
         </Nav>
       </Navbar.Collapse>
     </div>

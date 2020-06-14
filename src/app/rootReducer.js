@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 
 /* CAROUSEL */
-import home from './pages/home/reducers/home';
+import movies from './pages/home/reducers/movies';
 import moviesError from './pages/home/reducers/error';
 import moviesLoading from './pages/home/reducers/loading';
 
 const moviesData = combineReducers({
-  home,
+  movies,
   moviesError,
   moviesLoading,
 });

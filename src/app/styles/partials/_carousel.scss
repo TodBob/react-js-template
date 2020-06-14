@@ -8,7 +8,19 @@
       }
       
     .card {
-    
+      height: 512px;
+      .card-img-top {
+        height: 372px;
+      }
+
+      .card-body {
+        display: flex;
+        flex-direction: column;
+
+        button {
+          margin-top: auto;
+        }
+      }
     }
 
   }
