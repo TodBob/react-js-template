@@ -14,3 +14,9 @@
     - take aprox. 1h30min+
 5.commit, Add Spinner component + add spiner to HP  
     - take aprox. 15min    
+6. commit, Change fetch logic for Genres
+    - I have made mistake and dont found at first time the right API for Genres
+    - So I have fix this in this commit
+    - Added right endpoint, and refactor some components related with this changes
+    - Also added default img to assets
+    - take aprox. 30min
