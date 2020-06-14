@@ -9,7 +9,7 @@ import {
 const NavbarComponent = () => (
   <Navbar bg="light" expand="sm" sticky="top">
     <div className="container">
-      <Navbar.Brand href="#home">Movies Database</Navbar.Brand>
+      <Link className="mx-2 navbar-brand" to="/">Movies Database</Link>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
