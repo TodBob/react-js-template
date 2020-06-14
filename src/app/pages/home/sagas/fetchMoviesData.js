@@ -10,11 +10,11 @@ import {
 /* Fetch logic depends at order in MOVIES_URLS
   1. popular movies
   2. popular series
-  3. & 4. Family genre (movies/series)
-  3. & 4. Documentary genre (movies/series)
+  3. family genre
+  4. documentary genre
 
-  Right now I fetch only one page from movies and series
-    - If this goes to production, I will add ,,lazy loading,, feature
+  Right now I fetch only one page
+    - If its needed, I could add ,,lazy loading,, feature
 
   DEFINITELY THERE COULD BE BETTER LOGIC, BUT FOR THIS CASE WORKS WELL
 */
@@ -25,7 +25,7 @@ export function* fetchMoviesData() {
   try {
     const genreIds = yield getGenreIds();
     const response = yield Promise.all(
-      MOVIES_URLS(genreIds.movie_family, genreIds.movie_documentary)
+      MOVIES_URLS(genreIds.genre_family, genreIds.genre_documentary)
         .map((url) => fetch(url)),
     );
     const result = yield Promise.all(response.map((responses) => responses.json()));

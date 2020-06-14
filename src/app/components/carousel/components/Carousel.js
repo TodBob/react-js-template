@@ -6,6 +6,7 @@ import {
   Card, Button,
 } from 'react-bootstrap';
 import { responsive } from '../helpers/carouselResponsive';
+import DefaultLogo from '../../../assets/default.svg';
 
 const CarouselComponent = ({ moviesArray, title }) => (
   <div className="my-5">
@@ -34,7 +35,12 @@ const CarouselComponent = ({ moviesArray, title }) => (
     >
       {moviesArray.map((movie) => (
         <Card key={`${movie.id}${movie.release_date}`} className="card" style={{ width: '250px' }}>
-          <Card.Img variant="top" src={`http://image.tmdb.org/t/p/w342${movie.poster_path}`} />
+          <Card.Img
+            variant="top"
+            src={movie.poster_path
+              ? `http://image.tmdb.org/t/p/w342${movie.poster_path}`
+              : DefaultLogo}
+          />
           <Card.Body>
             <Card.Title>
               {movie.original_title

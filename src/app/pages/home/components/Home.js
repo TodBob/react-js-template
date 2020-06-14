@@ -6,7 +6,7 @@ import Spinner from '../../../components/spinner/components/Spinner';
 
 const Home = ({ fetchMoviesData, movies }) => {
   useEffect(() => {
-    fetchMoviesData({ page: '1', lang: 'en' });
+    fetchMoviesData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -19,8 +19,8 @@ const Home = ({ fetchMoviesData, movies }) => {
           <>
             <Carousel title="Popular Movies" moviesArray={movies[0].results} />
             <Carousel title="Popular Series" moviesArray={movies[1].results} />
-            <Carousel title="Family" moviesArray={[...movies[2].results, ...movies[3].results]} />
-            <Carousel title="Documentary" moviesArray={[...movies[4].results, ...movies[5].results]} />
+            <Carousel title="Family" moviesArray={movies[2].results} />
+            <Carousel title="Documentary" moviesArray={movies[3].results} />
           </>
         ) : <Spinner />}
       </div>
