@@ -2,14 +2,13 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Carousel from '../../../components/carousel/components/Carousel';
 import Navbar from '../../../components/navbar/components/Navbar';
+import Spinner from '../../../components/spinner/components/Spinner';
 
 const Home = ({ fetchMoviesData, movies }) => {
   useEffect(() => {
     fetchMoviesData({ page: '1', lang: 'en' });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  // TODO: LOADING SPINNER
 
   return (
     <>
@@ -23,8 +22,7 @@ const Home = ({ fetchMoviesData, movies }) => {
             <Carousel title="Family" moviesArray={[...movies[2].results, ...movies[3].results]} />
             <Carousel title="Documentary" moviesArray={[...movies[4].results, ...movies[5].results]} />
           </>
-        ) : null}
-
+        ) : <Spinner />}
       </div>
     </>
   );

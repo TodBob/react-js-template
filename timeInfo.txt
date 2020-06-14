@@ -10,3 +10,7 @@
     - take aprox. 15min of work
 4. coomit, added movie detail page template + added react router
     - take aprox. 30min of work    
+5. commit, Add API, finish fetch logic for HP and render carousel based on data'
+    - take aprox. 1h30min+
+5.commit, Add Spinner component + add spiner to HP  
+    - take aprox. 15min    
