@@ -6,14 +6,14 @@ import {
 } from 'react-router-dom';
 
 import Home from './pages/home/containers/Home';
-import MovieDetails from './pages/movieDetails/components/MovieDetails';
+import MovieDetails from './pages/movieDetails/containers/MovieDetails';
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Switch>
-          <Route path="/MovieDetails/:id">
+          <Route path="/details/:id">
             <MovieDetails />
           </Route>
           <Route exact path="/">

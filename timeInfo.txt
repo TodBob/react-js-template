@@ -20,3 +20,5 @@
     - Added right endpoint, and refactor some components related with this changes
     - Also added default img to assets
     - take aprox. 30min
+7. commit, Added & finish logic for movie detail page, also fix navbar warnings and adjust styles
+    -take aprox. 45min+

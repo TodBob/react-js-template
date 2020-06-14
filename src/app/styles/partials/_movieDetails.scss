@@ -5,4 +5,14 @@
   .right-column {
       @include center;
   }
+
+  .detail-page-img{
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+  }
+
+  .detail-page-button {
+      max-width: 300px;
+  }
 }

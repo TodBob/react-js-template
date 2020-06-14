@@ -5,10 +5,13 @@ import PropTypes from 'prop-types';
 import {
   Card, Button,
 } from 'react-bootstrap';
+import {
+  Link,
+} from 'react-router-dom';
 import { responsive } from '../helpers/carouselResponsive';
 import DefaultLogo from '../../../assets/default.svg';
 
-const CarouselComponent = ({ moviesArray, title }) => (
+const CarouselComponent = ({ moviesArray, title, moviesIndex }) => (
   <div className="my-5">
     <h3 className="mb-3">{title}</h3>
     <Carousel
@@ -47,7 +50,9 @@ const CarouselComponent = ({ moviesArray, title }) => (
                 ? movie.original_title
                 : movie.original_name}
             </Card.Title>
-            <Button variant="primary">Details!</Button>
+            <Link className="card-button" to={`/details/${movie.id}-${moviesIndex}`}>
+              <Button variant="primary">Details!</Button>
+            </Link>
           </Card.Body>
         </Card>
       ))}
@@ -59,6 +64,7 @@ const CarouselComponent = ({ moviesArray, title }) => (
 CarouselComponent.propTypes = {
   moviesArray: PropTypes.array.isRequired,
   title: PropTypes.string.isRequired,
+  moviesIndex: PropTypes.string.isRequired,
 };
 
 export default CarouselComponent;
