@@ -7,12 +7,16 @@ import {
 
 import Home from './pages/home/containers/Home';
 import MovieDetails from './pages/movieDetails/containers/MovieDetails';
+import VideoPlayer from './components/videoplayer/components/VideoPlayer';
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Switch>
+          <Route path="/video">
+            <VideoPlayer />
+          </Route>
           <Route path="/details/:id">
             <MovieDetails />
           </Route>
