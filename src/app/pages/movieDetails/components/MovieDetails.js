@@ -23,7 +23,7 @@ const MovieDetails = ({ movies, searchResults }) => {
   let movieObj;
   let imgUrl;
 
-  if (isSearchPage === 'false') {
+  if (isSearchPage === 'false' && movies) {
     movieObj = movies[arrayIndex].results.find((movie) => movie.id.toString() === movieId);
     imgUrl = movieObj.poster_path ? `http://image.tmdb.org/t/p/w342${movieObj.poster_path}` : DefaultLogo;
   } else if (searchResults) {
