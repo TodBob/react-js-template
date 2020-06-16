@@ -40,6 +40,6 @@
 
 9. commit, Added modal + video to detail page, add styles.
     - take aprox. 20min
-    
-10. commit, Added Search page, navbar component and logic for search bar/page 
+
+10. commit, Added Search page, searchbar component and logic for search bar/page 
     - take aprox. 2h
