@@ -22,3 +22,13 @@
     - take aprox. 30min
 7. commit, Added & finish logic for movie detail page, also fix navbar warnings and adjust styles
     -take aprox. 45min+
+8. commit, Added video player component & npm modules shaka-player, mux.js
+    - component it self take aprox 30min
+    - but I spend around 1h of reading documentatiot and try figure out how to auto open video in full screen
+        what is no possible. Or maybe there is a hack with hammer, but I dont waht to do that
+    - in documentation for elemnt.requestFullScreen() https://developer.mozilla.org/en-US/docs/Web/API/Element/requestFullScreen        
+        we can find that only user can trigger this event
+    - and also in React we dont want to manipulate with real DOM
+    - in vanilla JS there is probebly solution what I tested in web console and it works, but not working in React for me.
+9. commit, Added modal + video to detail page, add styles.
+    - take aprox. 20min

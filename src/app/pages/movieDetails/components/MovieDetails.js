@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Container, Row, Col, Button,
+  Container, Row, Col,
 } from 'react-bootstrap';
 import {
   useParams,
@@ -9,6 +9,8 @@ import {
 } from 'react-router-dom';
 import DefaultLogo from '../../../assets/default.svg';
 import Navbar from '../../../components/navbar/components/Navbar';
+import Modal from '../../../components/modal/components/Modal';
+import Video from '../../../components/videoplayer/components/VideoPlayer';
 
 const MovieDetails = ({ movies }) => {
   const { id } = useParams();
@@ -58,7 +60,9 @@ const MovieDetails = ({ movies }) => {
                         </li>
                       </ul>
                     </div>
-                    <Button className="mt-auto detail-page-button">Play button</Button>
+                    <Modal>
+                      <Video />
+                    </Modal>
                   </Col>
                   <Col md={12} lg={6} className="right-column">
                     <img className="mt-5 detail-page-img" src={imgUrl} alt={movieObj.original_title} />
@@ -73,6 +77,6 @@ const MovieDetails = ({ movies }) => {
 };
 
 MovieDetails.propTypes = {
-  movies: PropTypes.array.isRequired,
+  movies: PropTypes.array,
 };
 export default MovieDetails;
