@@ -12,13 +12,22 @@ import Navbar from '../../../components/navbar/components/Navbar';
 import Modal from '../../../components/modal/components/Modal';
 import Video from '../../../components/videoplayer/components/VideoPlayer';
 
-const MovieDetails = ({ movies }) => {
+const MovieDetails = ({ movies, searchResults }) => {
+  // TODO: try to find better solution, REFACTOR
   const { id } = useParams();
   const splitId = id.split('-');
+  const movieId = splitId[0];
+  const arrayIndex = splitId[1];
+  const isSearchPage = splitId[2];
+
   let movieObj;
   let imgUrl;
-  if (movies) {
-    movieObj = movies[splitId[1]].results.find((movie) => movie.id.toString() === splitId[0]);
+
+  if (isSearchPage === 'false') {
+    movieObj = movies[arrayIndex].results.find((movie) => movie.id.toString() === movieId);
+    imgUrl = movieObj.poster_path ? `http://image.tmdb.org/t/p/w342${movieObj.poster_path}` : DefaultLogo;
+  } else if (searchResults) {
+    movieObj = searchResults.results.find((movie) => movie.id.toString() === splitId[0]);
     imgUrl = movieObj.poster_path ? `http://image.tmdb.org/t/p/w342${movieObj.poster_path}` : DefaultLogo;
   }
 
@@ -78,5 +87,6 @@ const MovieDetails = ({ movies }) => {
 
 MovieDetails.propTypes = {
   movies: PropTypes.array,
+  searchResults: PropTypes.object,
 };
 export default MovieDetails;

@@ -6,22 +6,29 @@
 
 2. commit, Refactor logic from carousel to Home page, made carousel responsive and finish Home page template 
     - take aprox. 1h+ of work
+
 3. commit, added navbar. 
     - take aprox. 15min of work
+
 4. coomit, added movie detail page template + added react router
     - take aprox. 30min of work    
+
 5. commit, Add API, finish fetch logic for HP and render carousel based on data'
     - take aprox. 1h30min+
+
 5.commit, Add Spinner component + add spiner to HP  
     - take aprox. 15min    
+
 6. commit, Change fetch logic for Genres
     - I have made mistake and dont found at first time the right API for Genres
     - So I have fix this in this commit
     - Added right endpoint, and refactor some components related with this changes
     - Also added default img to assets
     - take aprox. 30min
+
 7. commit, Added & finish logic for movie detail page, also fix navbar warnings and adjust styles
     -take aprox. 45min+
+
 8. commit, Added video player component & npm modules shaka-player, mux.js
     - component it self take aprox 30min
     - but I spend around 1h of reading documentatiot and try figure out how to auto open video in full screen
@@ -30,5 +37,9 @@
         we can find that only user can trigger this event
     - and also in React we dont want to manipulate with real DOM
     - in vanilla JS there is probebly solution what I tested in web console and it works, but not working in React for me.
+
 9. commit, Added modal + video to detail page, add styles.
     - take aprox. 20min
+    
+10. commit, Added Search page, navbar component and logic for search bar/page 
+    - take aprox. 2h

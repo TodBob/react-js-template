@@ -7,15 +7,15 @@ import {
 
 import Home from './pages/home/containers/Home';
 import MovieDetails from './pages/movieDetails/containers/MovieDetails';
-import VideoPlayer from './components/videoplayer/components/VideoPlayer';
+import Search from './pages/search/containers/Search';
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Switch>
-          <Route path="/video">
-            <VideoPlayer />
+          <Route path="/search">
+            <Search />
           </Route>
           <Route path="/details/:id">
             <MovieDetails />

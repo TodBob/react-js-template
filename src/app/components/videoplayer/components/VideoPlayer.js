@@ -5,7 +5,7 @@ import muxjs from 'mux.js';
 /* TODO: move to Documentation
 - muxjs transfer hls format to mp4, because chrome for example,
 didnt support that format
-- also, in development VIDEO WILL NOT WORK, because of CORS policy of video sorce
+
 If video didint work, you have to disable CORS in you browser!!
 For example:
 linux:$ google-chrome --disable-web-security --user-data-dir="[some path]"
@@ -14,8 +14,7 @@ linux:$ google-chrome --disable-web-security --user-data-dir="[some path]"
 // This is needed for proper working of muxjs with shaka player
 window.muxjs = muxjs;
 
-// Copied solution from documentation
-
+// Copied solution from shaka-player documentation
 class VideoPlayer extends React.PureComponent {
   videoComponent = React.createRef();
 
@@ -52,7 +51,6 @@ class VideoPlayer extends React.PureComponent {
 
   render() {
     return (
-
     // eslint-disable-next-line jsx-a11y/media-has-caption
       <video
         id="videoPlayer"
@@ -63,7 +61,6 @@ class VideoPlayer extends React.PureComponent {
         autoPlay
       >
       </video>
-
     );
   }
 }
