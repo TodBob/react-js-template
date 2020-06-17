@@ -1,6 +1,6 @@
 import { GENRE_URLS } from './urls';
 
-/* This function get current ids for Family & Documentary Genres */
+/* getGenreIds() get current ids for Family & Documentary Genres */
 
 export const getGenreIds = async () => {
   const ids = {

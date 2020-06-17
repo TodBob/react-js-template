@@ -43,3 +43,5 @@
 
 10. commit, Added Search page, searchbar component and logic for search bar/page 
     - take aprox. 2h
+11. commit, Added alert for error handling, refactor/adjust app for erros with Alert    
+    - take aprox. 1h

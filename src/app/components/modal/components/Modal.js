@@ -40,7 +40,6 @@ function ModalComponent({ children }) {
         <div className="close-button" onClick={handleClose}>X</div>
         {children}
       </Modal>
-
     </>
   );
 }

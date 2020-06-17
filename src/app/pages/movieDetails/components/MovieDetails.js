@@ -13,7 +13,13 @@ import Modal from '../../../components/modal/components/Modal';
 import Video from '../../../components/videoplayer/components/VideoPlayer';
 
 const MovieDetails = ({ movies, searchResults }) => {
-  // TODO: try to find better solution, REFACTOR
+  /*
+    - get url param from router
+    - split them to:
+      1. movie id,
+      2. index of data array,
+      3. if we came from search page
+  */
   const { id } = useParams();
   const splitId = id.split('-');
   const movieId = splitId[0];
@@ -23,6 +29,10 @@ const MovieDetails = ({ movies, searchResults }) => {
   let movieObj;
   let imgUrl;
 
+  /*
+  Check if we came from Homepage or Search page
+  Then we can choose which data to filter
+  */
   if (isSearchPage === 'false' && movies) {
     movieObj = movies[arrayIndex].results.find((movie) => movie.id.toString() === movieId);
     imgUrl = movieObj.poster_path ? `http://image.tmdb.org/t/p/w342${movieObj.poster_path}` : DefaultLogo;

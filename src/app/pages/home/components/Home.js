@@ -3,8 +3,11 @@ import PropTypes from 'prop-types';
 import Carousel from '../../../components/carousel/components/Carousel';
 import Navbar from '../../../components/navbar/components/Navbar';
 import Spinner from '../../../components/spinner/components/Spinner';
+import Alert from '../../../components/alert/components/Alert';
 
-const Home = ({ fetchMoviesData, movies }) => {
+const Home = ({
+  fetchMoviesData, movies, moviesError, moviesLoading,
+}) => {
   useEffect(() => {
     fetchMoviesData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -22,7 +25,16 @@ const Home = ({ fetchMoviesData, movies }) => {
             <Carousel title="Family" moviesArray={movies[2].results} moviesIndex="2" />
             <Carousel title="Documentary" moviesArray={movies[3].results} moviesIndex="3" />
           </>
-        ) : <Spinner />}
+        ) : (
+          null
+        )}
+        {moviesLoading ? <Spinner /> : null}
+        {moviesError ? (
+          <Alert
+            variant="danger"
+            message="Something went wrong, try to reload page or contact support"
+          />
+        ) : null}
       </div>
     </>
   );
@@ -30,5 +42,7 @@ const Home = ({ fetchMoviesData, movies }) => {
 Home.propTypes = {
   fetchMoviesData: PropTypes.func.isRequired,
   movies: PropTypes.array,
+  moviesError: PropTypes.bool.isRequired,
+  moviesLoading: PropTypes.bool.isRequired,
 };
 export default Home;
