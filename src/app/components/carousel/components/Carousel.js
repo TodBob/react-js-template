@@ -3,15 +3,11 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import PropTypes from 'prop-types';
 import {
-  Card, Button,
-} from 'react-bootstrap';
-import {
-  Link,
   useLocation,
 } from 'react-router-dom';
 import { responsive } from '../helpers/carouselResponsive';
-import DefaultLogo from '../../../assets/default.svg';
 import Alert from '../../alert/components/Alert';
+import MovieCard from './MovieCard';
 
 const CarouselComponent = ({
   moviesArray, title, arrayIndex,
@@ -47,24 +43,12 @@ const CarouselComponent = ({
             swipeable
           >
             {moviesArray ? moviesArray.map((movie) => (
-              <Card key={`${movie.id}${movie.release_date}`} className="card">
-                <Card.Img
-                  variant="top"
-                  src={movie.poster_path
-                    ? `http://image.tmdb.org/t/p/w342${movie.poster_path}`
-                    : DefaultLogo}
-                />
-                <Card.Body>
-                  <Card.Title>
-                    {movie.original_title
-                      ? movie.original_title
-                      : movie.original_name}
-                  </Card.Title>
-                  <Link className="card-button" to={`/details/${movie.id}/${arrayIndex}/${isSearchPage}`}>
-                    <Button variant="primary">Details!</Button>
-                  </Link>
-                </Card.Body>
-              </Card>
+              <MovieCard
+                key={`${movie.id}${movie.release_date}`}
+                movie={movie}
+                arrayIndex={arrayIndex}
+                isSearchPage={isSearchPage}
+              />
             )) : []}
           </Carousel>
         )

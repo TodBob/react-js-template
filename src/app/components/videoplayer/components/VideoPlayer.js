@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import shaka from 'shaka-player';
 import muxjs from 'mux.js';
 
@@ -14,55 +14,49 @@ linux:$ google-chrome --disable-web-security --user-data-dir="[some path]"
 // This is needed for proper working of muxjs with shaka player
 window.muxjs = muxjs;
 
-// Copied solution from shaka-player documentation
-class VideoPlayer extends React.PureComponent {
-  videoComponent = React.createRef();
+const VideoPlayer = () => {
+  const videoComponent = React.createRef();
 
-  componentDidMount() {
+  useEffect(() => {
     // video URL
-    // TODO: hardcoded for now, in real case add props for URL
     const manifestUri = 'https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8';
-
-    // Reference to our video component on DOM
-    const video = this.videoComponent.current;
+    const video = videoComponent.current;
 
     // Initializing our shaka player
     const player = new shaka.Player(video);
 
     // Listen for error events.
-    player.addEventListener('error', this.onErrorEvent);
+    player.addEventListener('error', onErrorEvent);
 
     // Try to load a manifest.
     // This is an asynchronous process.
     player.load(manifestUri).then(() => {
-    }).catch(this.onError); // onError is executed if the asynchronous load fails.
-  }
+    }).catch(onError); // onError is executed if the asynchronous load fails.
+  }, []);
 
   // eslint-disable-next-line class-methods-use-this
-  onErrorEvent() {
+  const onErrorEvent = () => {
     // Extract the shaka.util.Error object from the event.
-  }
+  };
 
   // eslint-disable-next-line class-methods-use-this
-  onError(error) {
+  const onError = (error) => {
     // eslint-disable-next-line no-console
     console.error('Error code', error.code, 'object', error);
-  }
+  };
 
-  render() {
-    return (
-    // eslint-disable-next-line jsx-a11y/media-has-caption
-      <video
-        id="videoPlayer"
-        width="100%"
-        ref={this.videoComponent}
-        poster="//shaka-player-demo.appspot.com/assets/poster.jpg"
-        controls
-        autoPlay
-      >
-      </video>
-    );
-  }
-}
+  return (
+  // eslint-disable-next-line jsx-a11y/media-has-caption
+    <video
+      id="videoPlayer"
+      width="100%"
+      ref={videoComponent}
+      poster="//shaka-player-demo.appspot.com/assets/poster.jpg"
+      controls
+      autoPlay
+    >
+    </video>
+  );
+};
 
 export default VideoPlayer;

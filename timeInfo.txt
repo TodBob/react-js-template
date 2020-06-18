@@ -47,3 +47,5 @@
     - take aprox. 1h
 12. commit, Refactoring Part1. Focus on MovieDetails page
     - take aprox. 2h+
+13.commit, Refactoring Part2. Focus on getGenresId.js helper    
+    - take aprox. 1h+

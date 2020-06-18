@@ -15,8 +15,6 @@ import {
 
   Right now I fetch only one page
     - If its needed, I could add ,,lazy loading,, feature
-
-  DEFINITELY THERE COULD BE BETTER LOGIC, BUT FOR THIS CASE WORKS WELL
 */
 
 export function* fetchMoviesData() {
