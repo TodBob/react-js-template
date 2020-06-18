@@ -11,21 +11,21 @@ const Search = ({ searchResults, searchError }) => (
     <div className="container">
       <h1 className="mt-5">Search</h1>
       <SearchBar />
-      {searchResults && !searchResults.errors ? (
+      {(searchResults && !searchResults.errors && !searchError) && (
         <>
           <Carousel
             title={searchResults.errors ? 'Something is wrong, try it again. Please' : 'Search Results'}
             moviesArray={searchResults.results}
-            moviesIndex="0"
+            arrayIndex="0"
           />
         </>
-      ) : null}
-      {searchError || (searchResults && searchResults.errors) ? (
+      )}
+      {(searchError || (searchResults && searchResults.errors)) && (
         <Alert
           variant="danger"
           message="We are sorry, but somthing went wrong. Try it again later or contact support"
         />
-      ) : null}
+      )}
     </div>
   </>
 );

@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import 'react-multi-carousel/lib/styles.css';
 import PropTypes from 'prop-types';
 import {
   Button, Form, Navbar, FormControl, Spinner,
 } from 'react-bootstrap';
 
-const CarouselComponent = ({ fetchSearchData, loading }) => {
+const SearchBar = ({ fetchSearchData, loading }) => {
   const [searchValue, setSearchValue] = useState('');
   const [type, setType] = useState('movie');
   const data = { searchValue, type };
@@ -64,10 +63,10 @@ const CarouselComponent = ({ fetchSearchData, loading }) => {
     </div>
   );
 };
-CarouselComponent.propTypes = {
+SearchBar.propTypes = {
   fetchSearchData: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
 
 };
 
-export default CarouselComponent;
+export default SearchBar;

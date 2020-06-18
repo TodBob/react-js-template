@@ -18,23 +18,21 @@ const Home = ({
       <Navbar />
       <div className="container">
         <h1 className="mt-5">Movies Database</h1>
-        {movies ? (
+        {!!movies.length && (
           <>
-            <Carousel title="Popular Movies" moviesArray={movies[0].results} moviesIndex="0" />
-            <Carousel title="Popular Series" moviesArray={movies[1].results} moviesIndex="1" />
-            <Carousel title="Family" moviesArray={movies[2].results} moviesIndex="2" />
-            <Carousel title="Documentary" moviesArray={movies[3].results} moviesIndex="3" />
+            <Carousel title="Popular Movies" moviesArray={movies[0].results} arrayIndex="0" />
+            <Carousel title="Popular Series" moviesArray={movies[1].results} arrayIndex="1" />
+            <Carousel title="Family" moviesArray={movies[2].results} arrayIndex="2" />
+            <Carousel title="Documentary" moviesArray={movies[3].results} arrayIndex="3" />
           </>
-        ) : (
-          null
         )}
-        {moviesLoading ? <Spinner /> : null}
-        {moviesError ? (
+        {moviesLoading && <Spinner />}
+        {moviesError && (
           <Alert
             variant="danger"
             message="Something went wrong, try to reload page or contact support"
           />
-        ) : null}
+        )}
       </div>
     </>
   );

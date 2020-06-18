@@ -14,7 +14,7 @@ import DefaultLogo from '../../../assets/default.svg';
 import Alert from '../../alert/components/Alert';
 
 const CarouselComponent = ({
-  moviesArray, title, moviesIndex,
+  moviesArray, title, arrayIndex,
 }) => {
   const { pathname } = useLocation();
   const isSearchPage = pathname.includes('search');
@@ -60,7 +60,7 @@ const CarouselComponent = ({
                       ? movie.original_title
                       : movie.original_name}
                   </Card.Title>
-                  <Link className="card-button" to={`/details/${movie.id}-${moviesIndex}-${isSearchPage}`}>
+                  <Link className="card-button" to={`/details/${movie.id}/${arrayIndex}/${isSearchPage}`}>
                     <Button variant="primary">Details!</Button>
                   </Link>
                 </Card.Body>
@@ -81,7 +81,7 @@ const CarouselComponent = ({
 CarouselComponent.propTypes = {
   moviesArray: PropTypes.array,
   title: PropTypes.string.isRequired,
-  moviesIndex: PropTypes.string.isRequired,
+  arrayIndex: PropTypes.string.isRequired,
 };
 
 export default CarouselComponent;

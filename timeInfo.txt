@@ -45,3 +45,5 @@
     - take aprox. 2h
 11. commit, Add Alert component, refactor application, adjust components for Alert   
     - take aprox. 1h
+12. commit, Refactoring Part1. Focus on MovieDetails page
+    - take aprox. 2h+

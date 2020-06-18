@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-/* HOME PAGE */
+/* MOVIES */
 import movies from './pages/home/reducers/movies';
 import moviesError from './pages/home/reducers/error';
 import moviesLoading from './pages/home/reducers/loading';

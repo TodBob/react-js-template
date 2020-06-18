@@ -7,43 +7,29 @@ import {
   useParams,
   Redirect,
 } from 'react-router-dom';
-import DefaultLogo from '../../../assets/default.svg';
+import {
+  getImgUrl, getMovie, getMoviesData, getSearchResultsData,
+} from '../helpers/movieHelpers';
 import Navbar from '../../../components/navbar/components/Navbar';
 import Modal from '../../../components/modal/components/Modal';
 import Video from '../../../components/videoplayer/components/VideoPlayer';
+import MovieBody from './MovieBody';
 
 const MovieDetails = ({ movies, searchResults }) => {
-  /*
-    - get url param from router
-    - split them to:
-      1. movie id,
-      2. index of data array,
-      3. if we came from search page
-  */
-  const { id } = useParams();
-  const splitId = id.split('-');
-  const movieId = splitId[0];
-  const arrayIndex = splitId[1];
-  const isSearchPage = splitId[2];
+  const { movieId, arrayIndex, isSearchPage } = useParams();
 
-  let movieObj;
-  let imgUrl;
+  const areSearchResults = isSearchPage === 'true';
 
-  /*
-  Check if we came from Homepage or Search page
-  Then we can choose which data to filter
-  */
-  if (isSearchPage === 'false' && movies) {
-    movieObj = movies[arrayIndex].results.find((movie) => movie.id.toString() === movieId);
-    imgUrl = movieObj.poster_path ? `http://image.tmdb.org/t/p/w342${movieObj.poster_path}` : DefaultLogo;
-  } else if (searchResults) {
-    movieObj = searchResults.results.find((movie) => movie.id.toString() === splitId[0]);
-    imgUrl = movieObj.poster_path ? `http://image.tmdb.org/t/p/w342${movieObj.poster_path}` : DefaultLogo;
-  }
+  const moviesData = areSearchResults
+    ? getSearchResultsData(searchResults)
+    : getMoviesData(movies, arrayIndex);
+
+  const movieObj = getMovie(moviesData, movieId);
+  const imgUrl = getImgUrl(movieObj);
 
   return (
     <>
-      {!movies ? <Redirect push to="/" />
+      {!moviesData.length ? <Redirect push to="/" />
         : (
           <>
             <Navbar />
@@ -51,34 +37,7 @@ const MovieDetails = ({ movies, searchResults }) => {
               <Container>
                 <Row>
                   <Col md={12} lg={6} className="d-flex flex-column">
-                    <div className="left-column">
-                      <h2 className="mt-5">
-                        {movieObj.original_title
-                          ? movieObj.original_title
-                          : movieObj.original_name}
-                      </h2>
-                      <p className="mt-3">
-                        {movieObj.overview}
-                      </p>
-                      <hr className="my-4" />
-                      <ul>
-                        <li>
-                          Release date:
-                          {' '}
-                          {movieObj.release_date}
-                        </li>
-                        <li>
-                          Original language:
-                          {' '}
-                          {movieObj.original_language.toUpperCase()}
-                        </li>
-                        <li>
-                          Rating:
-                          {' '}
-                          {movieObj.vote_average}
-                        </li>
-                      </ul>
-                    </div>
+                    <MovieBody movieObj={movieObj} />
                     <Modal>
                       <Video />
                     </Modal>

@@ -17,7 +17,7 @@ function App() {
           <Route path="/search">
             <Search />
           </Route>
-          <Route path="/details/:id">
+          <Route path="/details/:movieId/:arrayIndex/:isSearchPage">
             <MovieDetails />
           </Route>
           <Route exact path="/">
