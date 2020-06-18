@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage, injectIntl } from 'react-intl';
 import {
   Button, Form, Navbar, FormControl, Spinner,
 } from 'react-bootstrap';
 
-const SearchBar = ({ fetchSearchData, loading }) => {
+const SearchBar = ({ fetchSearchData, loading, intl }) => {
   const [searchValue, setSearchValue] = useState('');
   const [type, setType] = useState('movie');
   const data = { searchValue, type };
+
+  const selectSeries = intl.formatMessage({ id: 'search.select.Series' });
+  const selectMovies = intl.formatMessage({ id: 'search.select.movies' });
+  const searchPlaceholder = intl.formatMessage({ id: 'search.placeHolder' });
+  const searchSubmit = intl.formatMessage({ id: 'search.submit' });
 
   const handleChange = (e) => {
     if (e.target.type === 'text') {
@@ -31,7 +37,7 @@ const SearchBar = ({ fetchSearchData, loading }) => {
               type="text"
               value={searchValue}
               onChange={handleChange}
-              placeholder="Search"
+              placeholder={searchPlaceholder}
               className="search-input mr-sm-2"
             />
             <Button
@@ -42,19 +48,21 @@ const SearchBar = ({ fetchSearchData, loading }) => {
             >
               {loading ? (
                 <Spinner className="spinner" animation="border" role="status">
-                  <span className="sr-only">Loading...</span>
+                  <span className="sr-only">
+                    <FormattedMessage id="default.loading" />
+                  </span>
                 </Spinner>
-              ) : 'Submit'}
+              ) : searchSubmit}
             </Button>
           </div>
           <div className="bottom-container">
             <Form.Group controlId="exampleForm.SelectCustom">
               <Form.Label className="label">
-                Select type:
+                <FormattedMessage id="search.select" />
               </Form.Label>
               <Form.Control value={type} onChange={handleChange} as="select" custom>
-                <option value="movie">Movies</option>
-                <option value="tv">Series</option>
+                <option value="movie">{selectMovies}</option>
+                <option value="tv">{selectSeries}</option>
               </Form.Control>
             </Form.Group>
           </div>
@@ -66,7 +74,7 @@ const SearchBar = ({ fetchSearchData, loading }) => {
 SearchBar.propTypes = {
   fetchSearchData: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
-
+  intl: PropTypes.object.isRequired,
 };
 
-export default SearchBar;
+export default injectIntl(SearchBar);

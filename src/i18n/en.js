@@ -1,0 +1,26 @@
+export default {
+  locale: 'en',
+  messages: {
+    'main.title': 'Movies Database',
+    'navbar.home': 'Home',
+    'navbar.search': 'Search',
+    'carousel.popularMovies': 'Popular Movies',
+    'carousel.popularSeries': 'Popular Series',
+    'carousel.family': 'Family',
+    'carousel.documentary': 'Documentary',
+    'carousel.card.detailButton': 'Detail',
+    'default.error': 'Something went wrong, try to reload page or contact support',
+    'default.loading': 'Loading...',
+    'search.submit': 'Submit',
+    'search.results': 'Search results',
+    'search.title': 'Search',
+    'search.placeHolder': 'Search...',
+    'search.select': 'Select Type',
+    'search.select.movies': 'Movies',
+    'search.select.Series': 'Series',
+    'custom.errorP1': 'We werent able to get',
+    'custom.errorP2': 'try to reload page',
+    'details.playButton': 'Watch Movie',
+
+  },
+};

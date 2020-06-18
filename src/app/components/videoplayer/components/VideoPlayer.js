@@ -32,6 +32,7 @@ const VideoPlayer = () => {
     // This is an asynchronous process.
     player.load(manifestUri).then(() => {
     }).catch(onError); // onError is executed if the asynchronous load fails.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // eslint-disable-next-line class-methods-use-this

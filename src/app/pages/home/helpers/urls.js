@@ -1,6 +1,6 @@
 import { BASE_API_KEY, BASE_API_V3 } from '../../../../http/api';
 
-/* ORDER IN MOVIES_URLS MATTER!! */
+/* ORDER IN MOVIES_URLS MATTERS */
 export const MOVIES_URLS = (family, documentary) => [
   `${BASE_API_V3}/movie/popular${BASE_API_KEY}`,
   `${BASE_API_V3}/tv/popular${BASE_API_KEY}`,

@@ -1,6 +1,7 @@
 import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { injectIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import {
   useLocation,
@@ -10,10 +11,12 @@ import Alert from '../../alert/components/Alert';
 import MovieCard from './MovieCard';
 
 const CarouselComponent = ({
-  moviesArray, title, arrayIndex,
+  moviesArray, title, arrayIndex, intl,
 }) => {
   const { pathname } = useLocation();
   const isSearchPage = pathname.includes('search');
+  const customErrorP1 = intl.formatMessage({ id: 'custom.errorP1' });
+  const customErrorP2 = intl.formatMessage({ id: 'custom.errorP2' });
 
   return (
     <div className="my-5">
@@ -55,7 +58,7 @@ const CarouselComponent = ({
         : (
           <Alert
             variant="danger"
-            message={`We werent able to get "${title}", try to reload page`}
+            message={`${customErrorP1} "${title}", ${customErrorP2}`}
           />
         )}
     </div>
@@ -66,6 +69,7 @@ CarouselComponent.propTypes = {
   moviesArray: PropTypes.array,
   title: PropTypes.string.isRequired,
   arrayIndex: PropTypes.string.isRequired,
+  intl: PropTypes.object.isRequired,
 };
 
-export default CarouselComponent;
+export default injectIntl(CarouselComponent);

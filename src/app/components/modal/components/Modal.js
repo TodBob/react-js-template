@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
+import { FormattedMessage } from 'react-intl';
 import {
   Button, Modal,
 } from 'react-bootstrap';
@@ -28,7 +29,7 @@ function ModalComponent({ children }) {
   return (
     <>
       <Button className="detail-page-button" variant="primary" onClick={handleShow}>
-        Watch Movie
+        <FormattedMessage id="details.playButton" />
       </Button>
       <Modal
         className="custom-modal"
