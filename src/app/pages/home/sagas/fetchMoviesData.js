@@ -23,9 +23,7 @@ export function* fetchMoviesData() {
   yield put({ type: SET_MOVIES_LOADING, data: true });
   yield put({ type: SET_MOVIES_ERROR, data: false });
   try {
-    console.log('test');
     const genreIds = yield getGenreIds();
-    console.log('..............saga', getGenreIds());
     const response = yield Promise.all(
       MOVIES_URLS(genreIds.genre_family, genreIds.genre_documentary)
         .map((url) => fetch(url)),
