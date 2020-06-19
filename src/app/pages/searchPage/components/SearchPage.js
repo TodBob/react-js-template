@@ -6,7 +6,7 @@ import Navbar from '../../../components/navbar/components/Navbar';
 import SearchBar from '../../../components/searchbar/containers/Searchbar';
 import Alert from '../../../components/alert/components/Alert';
 
-const Search = ({ searchResults, searchError, intl }) => {
+const SearchPage = ({ searchResults, searchError, intl }) => {
   const defaultError = intl.formatMessage({ id: 'default.error' });
   const searchResultsText = intl.formatMessage({ id: 'search.results' });
 
@@ -37,9 +37,9 @@ const Search = ({ searchResults, searchError, intl }) => {
     </>
   );
 };
-Search.propTypes = {
+SearchPage.propTypes = {
   searchResults: PropTypes.object,
   searchError: PropTypes.bool,
   intl: PropTypes.object.isRequired,
 };
-export default injectIntl(Search);
+export default injectIntl(SearchPage);

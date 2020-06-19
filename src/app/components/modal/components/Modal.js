@@ -11,6 +11,7 @@ function ModalComponent({ children }) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  // Function handle close on ESC button press
   const escFunction = useCallback((event) => {
     if (event.keyCode === 27) {
       handleClose();

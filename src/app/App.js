@@ -6,9 +6,9 @@ import {
   Route,
 } from 'react-router-dom';
 
-import Home from './pages/home/containers/Home';
-import MovieDetails from './pages/movieDetails/containers/MovieDetails';
-import Search from './pages/search/containers/Search';
+import MovieHomePage from './pages/movieHomePage/containers/MovieHomePage';
+import MovieDetailsPage from './pages/movieDetailsPage/containers/MovieDetailsPage';
+import SearchPage from './pages/searchPage/containers/SearchPage';
 
 function App() {
   return (
@@ -16,16 +16,16 @@ function App() {
       <Router>
         <Switch>
           <Route path="/search">
-            <Search />
+            <SearchPage />
           </Route>
           <Route path="/details/:movieId/:arrayIndex/:isSearchPage">
-            <MovieDetails />
+            <MovieDetailsPage />
           </Route>
           <Route exact path="/">
-            <Home />
+            <MovieHomePage />
           </Route>
           <Route path="*">
-            <Home />
+            <MovieHomePage />
           </Route>
         </Switch>
       </Router>

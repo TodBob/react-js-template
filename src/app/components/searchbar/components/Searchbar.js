@@ -43,7 +43,7 @@ const SearchBar = ({ fetchSearchData, loading, intl }) => {
             <Button
               type="submit"
               onClick={handleSubmit}
-              disabled={loading}
+              disabled={loading || !searchValue.length}
               className="submit-button"
             >
               {loading ? (

@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-/* MOVIES */
-import movies from './pages/home/reducers/movies';
-import moviesError from './pages/home/reducers/error';
-import moviesLoading from './pages/home/reducers/loading';
+/* MOVIES HOME PAGE */
+import movies from './pages/movieHomePage/reducers/movies';
+import moviesError from './pages/movieHomePage/reducers/error';
+import moviesLoading from './pages/movieHomePage/reducers/loading';
 
 /* SEARCH BAR */
 import searchResults from './components/searchbar/reducers/search';

@@ -1,5 +1,5 @@
 import DefaultLogo from '../../../assets/default.svg';
-import { BASE_IMG_URL } from './urls';
+import { BASE_IMG_URL } from '../../../../http/api';
 
 export const getMovie = (movies, movieId) => movies.find(
   (movie) => movie.id.toString() === movieId.toString(),

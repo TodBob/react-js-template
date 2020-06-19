@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import { getMovies } from '../../home/selectors';
+import { getMovies } from '../../movieHomePage/selectors';
 import { getSearchResults } from '../../../components/searchbar/selectors';
-import MovieDetails from '../components/MovieDetails';
+import MovieDetailsPage from '../components/MovieDetailsPage';
 
 const mapStateToProps = (state) => ({
   movies: getMovies(state),
@@ -11,4 +11,4 @@ const mapStateToProps = (state) => ({
 export default connect(
   mapStateToProps,
   null,
-)(MovieDetails);
+)(MovieDetailsPage);

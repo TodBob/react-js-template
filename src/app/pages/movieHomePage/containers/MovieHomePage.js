@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import {
   getMoviesData, getMovies, getMoviesError, getMoviesLoading,
 } from '../selectors';
-import Home from '../components/Home';
+import MovieHomePage from '../components/MovieHomePage';
 import { fetchMoviesData } from '../actions';
 
 const mapStateToProps = (state) => ({
@@ -19,4 +19,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Home);
+)(MovieHomePage);

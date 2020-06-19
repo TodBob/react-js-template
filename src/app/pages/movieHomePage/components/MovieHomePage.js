@@ -6,7 +6,7 @@ import Navbar from '../../../components/navbar/components/Navbar';
 import Spinner from '../../../components/spinner/components/Spinner';
 import Alert from '../../../components/alert/components/Alert';
 
-const Home = ({
+const MovieHomePage = ({
   fetchMoviesData,
   movies,
   moviesError,
@@ -48,11 +48,11 @@ const Home = ({
     </>
   );
 };
-Home.propTypes = {
+MovieHomePage.propTypes = {
   fetchMoviesData: PropTypes.func.isRequired,
   movies: PropTypes.array,
   moviesError: PropTypes.bool.isRequired,
   moviesLoading: PropTypes.bool.isRequired,
   intl: PropTypes.object.isRequired,
 };
-export default injectIntl(Home);
+export default injectIntl(MovieHomePage);

@@ -21,6 +21,9 @@ export default {
     'custom.errorP1': 'We werent able to get',
     'custom.errorP2': 'try to reload page',
     'details.playButton': 'Watch Movie',
+    'details.release': 'Release date',
+    'details.language': 'Original language',
+    'details.rating': 'Rating',
 
   },
 };

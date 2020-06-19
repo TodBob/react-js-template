@@ -50,4 +50,6 @@
 13. commit, Refactoring Part2. Focus on getGenresId.js helper    
     - take aprox. 1h+
 14. commit, Refactor Part3 + add test and localization with i18n
-    - take aprox. 1h    
+    - take aprox. 1h 
+15. commit, Refactoring Part4. Fixing/Adjusting the renaming last issues     
+    -take aprox 1h

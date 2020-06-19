@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 
 const MovieBody = ({ movieObj }) => (
   <div className="left-column">
@@ -14,17 +15,20 @@ const MovieBody = ({ movieObj }) => (
     <hr className="my-4" />
     <ul>
       <li>
-        Release date:
+        <FormattedMessage id="details.release" />
+        :
         {' '}
         {movieObj.release_date}
       </li>
       <li>
-        Original language:
+        <FormattedMessage id="details.language" />
+        :
         {' '}
         {movieObj.original_language.toUpperCase()}
       </li>
       <li>
-        Rating:
+        <FormattedMessage id="details.rating" />
+        :
         {' '}
         {movieObj.vote_average}
       </li>

@@ -1,5 +1,5 @@
 import { put } from 'redux-saga/effects';
-import { BASE_API_KEY, BASE_API_V3 } from '../../../../http/api';
+import { BASE_API_KEY, BASE_API_V3_URL } from '../../../../http/api';
 import {
   SET_SEARCH_DATA,
   SET_SEARCH_ERROR,
@@ -12,7 +12,7 @@ export function* fetchSearchData({ data }) {
   yield put({ type: SET_SEARCH_ERROR, data: false });
 
   try {
-    const response = yield fetch(`${BASE_API_V3}/search/${type}${BASE_API_KEY}&query=${searchValue}`);
+    const response = yield fetch(`${BASE_API_V3_URL}/search/${type}${BASE_API_KEY}&query=${searchValue}`);
     const result = yield response.json();
     yield put({ type: SET_SEARCH_DATA, data: result });
   } catch (e) {

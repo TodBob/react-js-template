@@ -7,7 +7,7 @@ import {
 import {
   Link,
 } from 'react-router-dom';
-import { BASE_IMG } from '../../../../http/api';
+import { BASE_IMG_URL } from '../../../../http/api';
 import DefaultLogo from '../../../assets/default.svg';
 
 const MovieCard = ({ movie, arrayIndex, isSearchPage }) => (
@@ -15,7 +15,7 @@ const MovieCard = ({ movie, arrayIndex, isSearchPage }) => (
     <Card.Img
       variant="top"
       src={movie.poster_path
-        ? `${BASE_IMG}${movie.poster_path}`
+        ? `${BASE_IMG_URL}${movie.poster_path}`
         : DefaultLogo}
     />
     <Card.Body>

@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
 import shaka from 'shaka-player';
 import muxjs from 'mux.js';
+import { BASE_VIDEO_URL } from '../../../../http/api';
 
-/* TODO: move to Documentation
-- muxjs transfer hls format to mp4, because chrome for example,
-didnt support that format
-
-If video didint work, you have to disable CORS in you browser!!
-For example:
-linux:$ google-chrome --disable-web-security --user-data-dir="[some path]"
+/*
+- mux.js transfer hls format to mp4
+- If video wont play, It may be problem with CORS
+  - try to disabled for local development
+  - linux command:
+    $ google-chrome --disable-web-security --user-data-dir="[some path]"
  */
 
-// This is needed for proper working of muxjs with shaka player
+// This is needed for proper working of mux.js with shaka-player
 window.muxjs = muxjs;
 
 const VideoPlayer = () => {
@@ -19,7 +19,7 @@ const VideoPlayer = () => {
 
   useEffect(() => {
     // video URL
-    const manifestUri = 'https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8';
+    const manifestUri = BASE_VIDEO_URL;
     const video = videoComponent.current;
 
     // Initializing our shaka player

@@ -1,8 +1,8 @@
 const {
   getMovie,
-} = require('../app/pages/movieDetails/helpers/movieHelpers');
+} = require('../app/pages/movieDetailsPage/helpers/movieHelpers');
 
-describe('movieDetails ', () => {
+describe('movieDetailsPage ', () => {
   describe('getMovie', () => {
     it('is defined ', () => {
       expect(getMovie).toBeDefined();

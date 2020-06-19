@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import SearchPage from '../components/Search';
+import SearchPage from '../components/SearchPage';
 import { getSearchResults, getSearchError } from '../../../components/searchbar/selectors';
 
 const mapStateToProps = (state) => ({

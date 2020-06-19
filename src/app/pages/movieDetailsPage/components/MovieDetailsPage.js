@@ -15,7 +15,7 @@ import Modal from '../../../components/modal/components/Modal';
 import Video from '../../../components/videoplayer/components/VideoPlayer';
 import MovieBody from './MovieBody';
 
-const MovieDetails = ({ movies, searchResults }) => {
+const MovieDetailsPage = ({ movies, searchResults }) => {
   const { movieId, arrayIndex, isSearchPage } = useParams();
 
   const areSearchResults = isSearchPage === 'true';
@@ -54,8 +54,8 @@ const MovieDetails = ({ movies, searchResults }) => {
   );
 };
 
-MovieDetails.propTypes = {
+MovieDetailsPage.propTypes = {
   movies: PropTypes.array,
   searchResults: PropTypes.object,
 };
-export default MovieDetails;
+export default MovieDetailsPage;
